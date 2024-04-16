@@ -46,7 +46,7 @@ import { Status } from '../type.d'
 import { Modal } from '@arco-design/web-vue'
 const activeKey = ref('downloading')
 const downloadTaskStore = useDownloadTaskStore()
-const downloadTasks = computed(() => downloadTaskStore.getDownloadingTasks)
+const downloadTasks = computed(() => downloadTaskStore.getDownloadingTasks.reverse())
 const pausedTasks = computed(() => downloadTaskStore.getPausedTasks)
 const finishedTasks = computed(() => downloadTaskStore.getFinishedTasks)
 const errorTasks = computed(() => downloadTaskStore.getErrorTasks)
