@@ -42,7 +42,7 @@ userStore.fetchUserProfile().catch(() => {
   })
 })
 const loginAction = () => {
-  window.electron.ipcRenderer.once('login-result', (_event, cookies) => {
+  window.electron.ipcRenderer.on('login-result', (_event, cookies) => {
     userStore.setCookie(cookies)
     userStore.fetchUserProfile()
   })

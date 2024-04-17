@@ -2174,7 +2174,7 @@ export function generate_x_b3_traceid(len) {
   }
   return x_b3_traceid
 }
-export function get_request_headers_params(api, data, a1, refresh = false) {
+export function get_request_headers_params(api, data, a1, refresh = true) {
   let xs_xt = get_xs(api, data, a1, refresh)
   let xs = xs_xt['X-s']
   let xt = xs_xt['X-t']

@@ -18,7 +18,7 @@ http.interceptors.response.use((resp) => {
         marginTop: '40px'
       }
     })
-    if (resp.status === 461) {
+    if (resp.status === 461 || resp.status === 471) {
       const userStore = useUserStore()
       window.electron.ipcRenderer.send(
         'open-url',

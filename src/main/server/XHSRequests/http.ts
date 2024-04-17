@@ -7,12 +7,13 @@ const http = axios.create({
   withCredentials: true,
   headers: get_request_headers_template(),
   validateStatus(status) {
-    return status >= 200 && status < 500
+    return status === 200 || status === 304
   }
 })
 
 http.interceptors.request.use((config) => {
-  config.headers.Cookie = (getCookies()[1] as string).trim() ?? ''
+  const cookies = getCookies()
+  config.headers.Cookie = (cookies[1] as string).trim() ?? ''
   return config
 })
 

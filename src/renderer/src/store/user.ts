@@ -17,7 +17,6 @@ export const useUserStore = defineStore('iuser', {
   actions: {
     setCookie(cookies) {
       this.icookies = cookies
-      this.$persist()
     },
     fetchUserProfile() {
       return new Promise((resolve, reject) => {
